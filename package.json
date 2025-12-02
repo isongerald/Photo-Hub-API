@@ -4,9 +4,12 @@
   },
   "scripts": {
     "build": "vite build",
-    "postinstall": "npm install vite"
+    "postinstall": "npm install -g vite"
   },
   "devDependencies": {
     "vite": "^7.2.6"
+  },
+  "engines": {
+    "node": ">=16"
   }
 }
