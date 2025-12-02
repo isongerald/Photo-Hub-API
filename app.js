@@ -10,7 +10,9 @@ let page = 1;
 let fetchLink;
 let currentSearch;
 
-console.log("Loaded API_KEY:", process.env.API_KEY); // Debug log to check if API_KEY is loaded
+const API_KEY = import.meta.env.VITE_API_KEY; // Use Vite environment variable
+
+console.log("Loaded API_KEY:", API_KEY); // Debug log to check if API_KEY is loaded
 
 // Event listener for the search form submission'
 moreButton.addEventListener("click", () => {
