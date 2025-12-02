@@ -1,4 +1,7 @@
 import { API_KEY } from "./config.js";
+import dotenv from 'dotenv';
+dotenv.config();
+
 const gallery = document.querySelector(".gallery");
 const searchForm = document.querySelector(".search-form");
 const searchInput = document.querySelector(".search-input");
