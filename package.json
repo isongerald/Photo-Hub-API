@@ -3,7 +3,8 @@
     "dotenv": "^10.0.0"
   },
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "postinstall": "npm install vite"
   },
   "devDependencies": {
     "vite": "^7.2.6"
