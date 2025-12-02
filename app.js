@@ -30,15 +30,21 @@ searchForm.addEventListener("submit", (e) => {
 
 async function fetchApi() {
   fetchLink = `https://api.pexels.com/v1/search?query=${searchValue}&per_page=15&page=${page}`;
-  const dataFetch = await fetch(fetchLink, {
-    method: "GET",
-    headers: {
-      Accept: "application/json",
-      Authorization: API_KEY,
-    },
-  });
-  const data = await dataFetch.json();
-  return data;
+  try {
+    const dataFetch = await fetch(fetchLink, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        Authorization: API_KEY,
+      },
+    });
+    const data = await dataFetch.json();
+    console.log("API Response:", data); // Debug log for API response
+    return data;
+  } catch (error) {
+    console.error("Error fetching API:", error); // Log errors
+    return null;
+  }
 }
 
 function generatePhotoElement(data) {
