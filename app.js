@@ -1,4 +1,9 @@
-import { API_KEY } from "./config.js";
+// import { API_KEY } from "./config.js";
+
+const API_KEY = import.meta.env.VITE_API_KEY;
+
+console.log("API_KEY loaded:", API_KEY ? "✅ YES" : "❌ NO");
+console.log("API_KEY value:", API_KEY); // This will show you the actual key
 
 const gallery = document.querySelector(".gallery");
 const searchForm = document.querySelector(".search-form");

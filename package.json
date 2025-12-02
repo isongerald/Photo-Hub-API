@@ -4,7 +4,12 @@
     "vite": "^7.2.6"
   },
   "scripts": {
-    "build": "vite build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1"
+  }
 }
