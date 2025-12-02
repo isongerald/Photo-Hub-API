@@ -1,4 +1,4 @@
-import { NEXT_PUBLIC_PEXELS_API_KEY } from "./config.js";
+import { API_KEY } from "./config.js";
 const gallery = document.querySelector(".gallery");
 const searchForm = document.querySelector(".search-form");
 const searchInput = document.querySelector(".search-input");
@@ -30,7 +30,7 @@ async function fetchApi() {
     method: "GET",
     headers: {
       Accept: "application/json",
-      Authorization: NEXT_PUBLIC_PEXELS_API_KEY,
+      Authorization: API_KEY,
     },
   });
   const data = await dataFetch.json();
