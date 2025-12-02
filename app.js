@@ -1,3 +1,5 @@
+import { API_KEY } from "./config.js";
+
 const gallery = document.querySelector(".gallery");
 const searchForm = document.querySelector(".search-form");
 const searchInput = document.querySelector(".search-input");
@@ -6,10 +8,6 @@ let searchValue;
 let page = 1;
 let fetchLink;
 let currentSearch;
-
-const API_KEY = import.meta.env.VITE_API_KEY; // Use Vite environment variable
-
-console.log("Loaded API_KEY:", API_KEY); // Debug log to check if API_KEY is loaded
 
 // Event listener for the search form submission'
 moreButton.addEventListener("click", () => {
@@ -29,21 +27,15 @@ searchForm.addEventListener("submit", (e) => {
 
 async function fetchApi() {
   fetchLink = `https://api.pexels.com/v1/search?query=${searchValue}&per_page=15&page=${page}`;
-  try {
-    const dataFetch = await fetch(fetchLink, {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        Authorization: API_KEY,
-      },
-    });
-    const data = await dataFetch.json();
-    console.log("API Response:", data); // Debug log for API response
-    return data;
-  } catch (error) {
-    console.error("Error fetching API:", error); // Log errors
-    return null;
-  }
+  const dataFetch = await fetch(fetchLink, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      Authorization: API_KEY,
+    },
+  });
+  const data = await dataFetch.json();
+  return data;
 }
 
 function generatePhotoElement(data) {
