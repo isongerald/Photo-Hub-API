@@ -1,12 +1,10 @@
 {
   "dependencies": {
     "dotenv": "^10.0.0",
-    "vite": "^4.0.0"
+    "vite": "^7.2.6"
   },
   "scripts": {
     "build": "vite build"
   },
-  "engines": {
-    "node": ">=16"
-  }
+  "type": "module"
 }
